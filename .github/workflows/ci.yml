@@ -6,8 +6,12 @@ jobs:
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
     steps:
     - run: dotnet --list-sdks
+    - run: echo DOTNET_MULTILEVEL_LOOKUP=%DOTNET_MULTILEVEL_LOOKUP%
+      shell: cmd
     - uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 2.1.x
     - run: dotnet --list-sdks
+    - run: echo DOTNET_MULTILEVEL_LOOKUP=%DOTNET_MULTILEVEL_LOOKUP%
+      shell: cmd
     - run: dotnet build
