@@ -5,6 +5,7 @@ jobs:
     env:
       DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
     steps:
+    - uses: actions/checkout@v2
     - run: dotnet --list-sdks
     - run: echo DOTNET_MULTILEVEL_LOOKUP=%DOTNET_MULTILEVEL_LOOKUP%
       shell: cmd
@@ -15,7 +16,4 @@ jobs:
     - run: dotnet --list-sdks
     - run: echo DOTNET_MULTILEVEL_LOOKUP=%DOTNET_MULTILEVEL_LOOKUP%
       shell: cmd
-    - run: |
-        pwd
-        ls
-        dotnet build setup-dotnet-test.sln
+    - run: dotnet build
