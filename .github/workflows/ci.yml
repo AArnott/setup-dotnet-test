@@ -15,4 +15,4 @@ jobs:
     - run: dotnet --list-sdks
     - run: echo DOTNET_MULTILEVEL_LOOKUP=%DOTNET_MULTILEVEL_LOOKUP%
       shell: cmd
-    - run: dotnet build
+    - run: pwd ; dotnet build
