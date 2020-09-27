@@ -2,6 +2,8 @@ on: push
 jobs:
   build:
     runs-on: windows-latest
+    env:
+      DOTNET_SKIP_FIRST_TIME_EXPERIENCE: true
     steps:
     - run: dotnet --list-sdks
     - uses: actions/setup-dotnet@v1
